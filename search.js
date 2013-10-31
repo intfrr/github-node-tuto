@@ -1,6 +1,14 @@
 #!/usr/local/bin/node
 
 var github = require("github");
+var path = require('path');
+
+/**
+ * Check is user pass the right params
+ */
+if ( process.argv.length <= 4 ) {
+       return console.log("Usage: " + path.basename(process.argv[1]) + " <location> " + "<user_token>");
+};
 
 var loc = "location:";
 var arg = process.argv[2] ? process.argv[2] : "Granada";
